@@ -5,7 +5,7 @@
   padding: 20px;
 }
 .input {
-  color: lightgrey;
+  color: black;
   padding: 5px;
 }
 .button {
@@ -14,4 +14,7 @@
   padding: 10px 20px;
   color: white;
   border: none;
+}
+.checked {
+  text-decoration: line-through;
 }

@@ -12,9 +12,8 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
-  
 
-  .form-one{
+  .form-one {
     height: auto;
     background: white;
     border-radius: 10px;
@@ -37,29 +36,30 @@
     color: white;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      cursor: pointer;
-
+    cursor: pointer;
   }
 }
-.second-section{
+.second-section {
   background: white;
   border-radius: 10px;
   padding: 20px;
 
   .Secondbutton {
-  border: none;
-  background-color: #08ebeb;
-  color: white;
-  padding: 3px 15px;
-  border-radius: 5px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    border: none;
+    background-color: #08ebeb;
+    color: white;
+    padding: 3px 15px;
+    border-radius: 5px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     cursor: pointer;
   }
 }
 
-
 .input {
   color: lightgrey;
   height: 19px;
+}
+.checked {
+  text-decoration: line-through;
 }

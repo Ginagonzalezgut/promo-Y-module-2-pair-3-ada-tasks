@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="tareas">
+        <input
+          class="input"
+          type="text"
+          placeholder="Nueva tarea"
+          name="text"
+          value="text"
+        />
+        <button class="button" type="submit" value="Agregar">Agregar</button>
+      </form>
+      <form action="">
+        <input
+          class="input"
+          type="text"
+          placeholder="Ejemplo:Gym"
+          name="text"
+          value="text"
+        />
+        <button class="button" type="submit" value="Buscar">Buscar</button>
+      </form>
+      <ul class="list js-list">
+        <li class="tasks">
+          <input type="checkbox" name="" id="checkbox" />Hacer ejercicio
+        </li>
+      </ul>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

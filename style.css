@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+}
+.form {
+  padding: 20px;
+}
+.input {
+  color: lightgrey;
+  padding: 5px;
+}
+.button {
+  background-color: rgb(42, 186, 138);
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}

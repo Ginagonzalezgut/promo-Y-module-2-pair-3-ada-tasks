@@ -4,37 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
 
     <title>Document</title>
   </head>
   <body>
+    <nav class="navegador">
+      <div><b>AdaTask</b></div>
+      <div>
+        Gina and Yessenia <br />
+        Proyect
+      </div>
+    </nav>
+
     <div class="container">
-      <form action="tareas">
-        <input
-          class="input"
-          type="text"
-          placeholder="Nueva tarea"
-          name="text"
-          value="text"
-        />
-        <button class="button" type="submit" value="Agregar">Agregar</button>
-      </form>
-      <form action="">
-        <input
-          class="input"
-          type="text"
-          placeholder="Ejemplo:Gym"
-          name="text"
-          value="text"
-        />
-        <button class="button" type="submit" value="Buscar">Buscar</button>
-      </form>
-      <ul class="list js-list">
-        <li class="tasks">
-          <input type="checkbox" name="" id="checkbox" />Hacer ejercicio
-        </li>
-      </ul>
+      <section class="form-one">
+        <form action="tareas">
+          <input
+            class="input"
+            type="text"
+            placeholder="Nueva tarea"
+            name="text"
+            value=""
+          />
+          <button class="button" type="submit" value="Agregar">Agregar</button>
+        </form>
+      </section>
+
+      <section class="second-section">
+        <form action="">
+          <input
+            class="input"
+            type="text"
+            placeholder="Ejemplo:Gym"
+            name="text"
+            value=""
+          />
+          <button class="Secondbutton" type="submit" value="Buscar">Buscar</button>
+        </form>
+        <ul class="list js-list">
+          <li class="tasks ">
+            <input type="checkbox" name="" id="checkbox" />Hacer ejercicio
+          </li>
+        </ul>
+      </section>
     </div>
+
     <script src="./main.js"></script>
   </body>
 </html>

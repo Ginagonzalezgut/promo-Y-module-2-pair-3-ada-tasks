@@ -1,17 +1,65 @@
+.navegador {
+  background: #08ebeb;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+}
+
 .container {
   display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  
+
+  .form-one{
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px 15px;
+    display: flex;
+    text-align: center;
+    margin-right: 20px;
+  }
+
+  .form-one form {
+    display: flex;
+    flex-direction: column;
+  }
+  .button {
+    background-color: #08ebeb;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 10px;
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      cursor: pointer;
+
+  }
 }
-.form {
+.second-section{
+  background: white;
+  border-radius: 10px;
   padding: 20px;
+
+  .Secondbutton {
+  border: none;
+  background-color: #08ebeb;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    cursor: pointer;
+  }
 }
+
+
 .input {
   color: lightgrey;
-  padding: 5px;
-}
-.button {
-  background-color: rgb(42, 186, 138);
-  border-radius: 20px;
-  padding: 10px 20px;
-  color: white;
-  border: none;
+  height: 19px;
 }

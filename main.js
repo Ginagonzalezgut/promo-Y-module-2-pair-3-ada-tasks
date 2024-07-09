@@ -12,27 +12,38 @@ const tasks = [
 ];
 
 const list = document.querySelector(".js-list");
-const secondButton = document.querySelector('.Secondbutton')
+const secondButton = document.querySelector(".Secondbutton");
+const SearchInput = document.querySelector(".search");
 
+function handleCheck(event) {
+  event.target.id; 
+}
 
-const rendertasks = () => {
-  for (const task of tasks) {
+const rendertasks = (filteredTasks) => {
+  list.innerHTML = "";
+  for (const task of filteredTasks || tasks) {
     if (task.completed === true) {
-      list.innerHTML += `<li class="checked"><input checked type="checkbox" id="${task.id}" name="" />${task.name}
+      list.innerHTML += `<li class="task${task.id} checked"><input checked type="checkbox" id="${task.id}" name="" />${task.name}
       </li>`;
     } else {
-      list.innerHTML += `<li><input type="checkbox" id="${task.id}"  name="" />${task.name}
+      list.innerHTML += `<li><input type="checkbox" id="${task.id}" name="" />${task.name}
       </li>`;
     }
   }
+
+  const check = document.querySelectorAll('[type="checkbox"]');
+  for (const checkbox of check) {
+    checkbox.addEventListener("input", handleCheck);
+  }
 };
 
+secondButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const filteredTasks = tasks.filter((searchTask) => {
+    return searchTask.name.includes(SearchInput.value);
+  });
 
-function handleClick(){
-  rendertasks.classList.remove(checkbox)
-}
-
-secondButton.addEventListener('click', handleClick)
-
+  rendertasks(filteredTasks);
+});
 
 rendertasks();

@@ -12,11 +12,27 @@ const tasks = [
 ];
 
 const list = document.querySelector(".js-list");
+const secondButton = document.querySelector('.Secondbutton')
+
 
 const rendertasks = () => {
   for (const task of tasks) {
-    list.innerHTML += `<li><input type="checkbox" ${task.id} name="" />${task.name}
-          </li>`;
+    if (task.completed === true) {
+      list.innerHTML += `<li class="checked"><input checked type="checkbox" id="${task.id}" name="" />${task.name}
+      </li>`;
+    } else {
+      list.innerHTML += `<li><input type="checkbox" id="${task.id}"  name="" />${task.name}
+      </li>`;
+    }
   }
 };
+
+
+function handleClick(){
+  rendertasks.classList.remove(checkbox)
+}
+
+secondButton.addEventListener('click', handleClick)
+
+
 rendertasks();

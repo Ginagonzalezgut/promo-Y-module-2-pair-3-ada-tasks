@@ -15,7 +15,7 @@ const list = document.querySelector(".js-list");
 
 const rendertasks = () => {
   for (const task of tasks) {
-    list.innerHTML += `<li><input type="checkbox" name="" id="checkbox" />${task.name}
+    list.innerHTML += `<li><input type="checkbox" ${task.id} name="" />${task.name}
           </li>`;
   }
 };

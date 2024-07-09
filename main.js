@@ -11,11 +11,13 @@ const tasks = [
   },
 ];
 
+let filteredTasks =  null
+
 const list = document.querySelector(".js-list");
 const secondButton = document.querySelector(".Secondbutton");
 const SearchInput = document.querySelector(".js-input-search");
 
-const rendertasks = (filteredTasks) => {
+const rendertasks = () => {
   list.innerHTML = "";
   for (const task of filteredTasks || tasks) {
     if (task.completed === true) {
@@ -43,11 +45,11 @@ const rendertasks = (filteredTasks) => {
 
 secondButton.addEventListener("click", (event) => {
   event.preventDefault();
-  const filteredTasks = tasks.filter((searchTask) => {
+  filteredTasks = tasks.filter((searchTask) => {
     return searchTask.name.includes(SearchInput.value);
   });
 
-  rendertasks(filteredTasks);
+  rendertasks();
 });
 
 rendertasks();

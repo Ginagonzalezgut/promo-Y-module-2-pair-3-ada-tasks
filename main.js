@@ -18,6 +18,7 @@ let filteredTasks = null;
 const list = document.querySelector(".js-list");
 const secondButton = document.querySelector(".Secondbutton");
 const SearchInput = document.querySelector(".js-input-search");
+const paragraph = document.querySelector(".js-paragraph");
 
 const rendertasks = () => {
   list.innerHTML = "";
@@ -63,3 +64,5 @@ fetch(" https://dev.adalab.es/api/todo")
     tasks = dataResults;
     rendertasks();
   });
+
+paragraph.innerHTML = `Tienes  tareas.  completadas y  por realizar.`;

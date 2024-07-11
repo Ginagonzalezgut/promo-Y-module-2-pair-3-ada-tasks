@@ -18,8 +18,8 @@ let filteredTasks = null;
 const list = document.querySelector(".js-list");
 const secondButton = document.querySelector(".Secondbutton");
 const SearchInput = document.querySelector(".js-input-search");
-const buttonAddTask = document.querySelector('.js-button-task')
-const inputTask = document.querySelector('.js-input-new-task')
+const buttonAddTask = document.querySelector(".js-button-task");
+const inputTask = document.querySelector(".js-input-new-task");
 
 const rendertasks = () => {
   list.innerHTML = "";
@@ -60,39 +60,38 @@ rendertasks();
 
 const tasksLocalStorage = JSON.parse(localStorage.getItem("tasks"));
 
-if (tasksLocalStorage !== null) {
+if (tasksLocalStorage) {
   // si (existe el listado de tareas en Local Storage)
   // pinta la lista de tareas almacenadas en tasksLocalStorage
-  const taskLocalStorage = localStorage.setItem('taskString', JSON.stringify(tasks))
-  rendertasks(taskLocalStorage)
-
+  tasks = tasksLocalStorage
+  rendertasks();
 } else {
   fetch(" https://dev.adalab.es/api/todo")
-  .then((response) => response.json())
-  .then((data) => {
-    const dataResults = data.results;
-    tasks = dataResults;
-    rendertasks();
-  })
+    .then((response) => response.json())
+    .then((data) => {
+      const dataResults = data.results;
+      tasks = dataResults;
+      rendertasks();
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    })
 
-  .catch((error) => {
-    console.error(error);
-  }); 
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
+const handleNewTask = (event) => {
+  event.preventDefault();
 
-  const handleNewTask = (event) => {
-    event.preventDefault();
-  
-    const newTaskName = inputTask.value;
+  const newTaskName = inputTask.value;
 
-    const newTask = {
-      name: newTaskName,
-      completed: false,
-    };
-
-    tasks.push(newTask);
-    rendertasks();
+  const newTask = {
+    name: newTaskName,
+    completed: false,
   };
 
-  buttonAddTask.addEventListener('click', handleNewTask)
+  tasks.push(newTask);
+  rendertasks();
+};
+
+buttonAddTask.addEventListener("click", handleNewTask);

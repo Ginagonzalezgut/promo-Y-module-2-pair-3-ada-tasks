@@ -60,10 +60,8 @@ rendertasks();
 
 const tasksLocalStorage = JSON.parse(localStorage.getItem("tasks"));
 
-if (tasksLocalStorage) {
-  // si (existe el listado de tareas en Local Storage)
-  // pinta la lista de tareas almacenadas en tasksLocalStorage
-  tasks = tasksLocalStorage
+if (tasksLocalStorage !== null) {
+  tasks = tasksLocalStorage;
   rendertasks();
 } else {
   fetch(" https://dev.adalab.es/api/todo")

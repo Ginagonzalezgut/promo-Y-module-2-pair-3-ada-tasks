@@ -70,7 +70,7 @@ if (tasksLocalStorage !== null) {
       const dataResults = data.results;
       tasks = dataResults;
       rendertasks();
-      localStorage.setItem('tasks', JSON.stringify(tasks))
+      localStorage.setItem("tasks", JSON.stringify(tasks));
     })
 
     .catch((error) => {

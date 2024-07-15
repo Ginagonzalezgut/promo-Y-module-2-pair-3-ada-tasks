@@ -24,12 +24,19 @@ const inputTask = document.querySelector(".js-input-new-task");
 const rendertasks = () => {
   list.innerHTML = "";
   for (const task of filteredTasks || tasks) {
+    const li = document.createElement("li");
+    list.appendChild(li);
+    const input = document.createElement("input");
+    input.setAttribute("class", "js-checkbox");
+    input.setAttribute("type", "checkbox");
+    input.setAttribute("id", `${task.id}`);
+    li.appendChild(input);
+    const textSpan = document.createTextNode(`${task.name}`);
+    li.appendChild(textSpan);
+
     if (task.completed === true) {
-      list.innerHTML += `<li class="checked"><input class="js-checkbox" checked type="checkbox" id="${task.id}" name="" />${task.name}
-      </li>`;
-    } else {
-      list.innerHTML += `<li><input class="js-checkbox" type="checkbox" id="${task.id}"  name="" />${task.name}
-      </li>`;
+      li.setAttribute("class", "checked");
+      input.setAttribute("checked", "true");
     }
   }
 
